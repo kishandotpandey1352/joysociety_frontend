@@ -1,0 +1,178 @@
+.screen-shadow {
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.02);
+}
+
+.completion-date {
+    position: relative;
+    display: flex;
+
+    .btn-cal {
+        position: absolute;
+        right: 0;
+    }
+}
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+
+}
+.row1 {
+  margin:5px;
+  align-self:center;
+  width: 95%;
+  height: 100%;
+  border-style: solid;
+  border-color: #0b675f;
+  border-radius: 8px;
+
+}
+.column {
+  float: left;
+  width: 60%;
+  padding: 3px;
+  height: 100%;
+  border-style: solid;
+  border-color: #0b675f;
+  border-radius: 8px;
+}
+.column1 {
+  height: 100%;
+  margin-left:8px;
+  border-style: solid;
+  border-color: #0b675f;
+  border-radius: 8px;
+  float: left;
+  width: 35%;
+  padding: 10px;
+
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.table-responsive {
+    
+    .table {
+    
+        thead {
+            background-color: #0b675f;
+            color: #fff;
+        }
+
+        tbody {
+            .th-label {
+                background-color: #fff;
+            }
+
+            td {
+                &.score1 {
+                    background-color: #1a736808;
+                    width: 25%;
+                }
+
+                &.score2 {
+                    background-color: #1a736814;
+                    width: 25%;
+                }
+            }
+
+            tr:last-child {
+                border-color: transparent;
+            }
+        }
+    }
+    
+    .table2 {
+        
+        thead {
+            background-color: #0b675f;
+            color: #fff;
+        }
+
+        tbody {
+            .th-label {
+                background-color: #fff;
+            }
+
+            td {
+                &.score1 {
+                    background-color: #1a736808;
+                    width: 25%;
+                }
+
+                &.score2 {
+                    background-color: #1a736814;
+                    width: 25%;
+                }
+            }
+
+            tr:last-child {
+                border-color: transparent;
+                vertical-align:top;
+                margin-left:10px;
+            }
+        }
+    }
+}
+
+
+
+.card-container {
+    border-radius: 8px;
+
+    .card-container-header {
+        color: #fff;
+        padding: 15px 25px;
+        background-color: #0b675f;
+        p {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+
+    .form-container {
+        padding: 15px 25px;
+
+        label {
+            font-weight: 600;
+        }
+
+        .cal-input {
+            width: 0;
+            padding: 0;
+            visibility: hidden;
+        }
+
+        .btn-cal {
+            background-color: #0b675f;
+            padding: 7px;
+            border-radius: 6px;
+            border-top-left-radius: 6px !important;
+            border-bottom-left-radius: 6px !important;
+
+            &:hover {
+                background-color: #19a59c;
+            }
+        }
+
+        ::ng-deep {
+            ngb-datepicker-navigation-select>.form-select {
+                margin: 0 1px;
+            }
+        }
+
+        .support {
+            background-color: #0b675f;
+            border-radius: 6px;
+
+            p {
+                font-size: 20px;
+                font-weight: 600;
+                color: #fff;
+            }
+        }
+    }
+}
