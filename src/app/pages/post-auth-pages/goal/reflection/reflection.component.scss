@@ -11,12 +11,52 @@
         right: 0;
     }
 }
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+
+}
+.row1 {
+  margin:5px;
+  align-self:center;
+  width: 95%;
+  height: 100%;
+  border-style: solid;
+  border-color: #0b675f;
+  border-radius: 8px;
+
+}
+.column {
+  float: left;
+  width: 60%;
+  padding: 3px;
+  height: 100%;
+  border-style: solid;
+  border-color: #0b675f;
+  border-radius: 8px;
+}
+.column1 {
+  height: 100%;
+  margin-left:8px;
+  border-style: solid;
+  border-color: #0b675f;
+  border-radius: 8px;
+  float: left;
+  width: 35%;
+  padding: 10px;
+
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 .table-responsive {
-    border-radius: 8px;
-
+    
     .table {
-        min-height: 350px;
+    
         thead {
             background-color: #0b675f;
             color: #fff;
@@ -44,7 +84,41 @@
             }
         }
     }
+    
+    .table2 {
+        
+        thead {
+            background-color: #0b675f;
+            color: #fff;
+        }
+
+        tbody {
+            .th-label {
+                background-color: #fff;
+            }
+
+            td {
+                &.score1 {
+                    background-color: #1a736808;
+                    width: 25%;
+                }
+
+                &.score2 {
+                    background-color: #1a736814;
+                    width: 25%;
+                }
+            }
+
+            tr:last-child {
+                border-color: transparent;
+                vertical-align:top;
+                margin-left:10px;
+            }
+        }
+    }
 }
+
+
 
 .card-container {
     border-radius: 8px;

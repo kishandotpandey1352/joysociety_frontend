@@ -20,10 +20,18 @@
 			25. You will receive the results once you complete the assessment, with an option to receive them via email
 			and/or print a PDF.
 		</p>
-		<div class="table-responsive screen-shadow">
+		<div class="table-responsive screen-shadow row">
+			<div class="row1">
+			<table class="table2 mb-0">
+					<tr><b>Was there anything from your Success Evaluation that surprised you or confirmed somethingyou've already had top of mind?</b>
+					<textarea rows="3" cols="102" style="border-style: dotted;"></textarea></tr>
+			</table>
+			</div>
+			<div class="column">
 			<table class="table mb-0">
 				<thead>
 					<tr>
+						<th scope="col"></th>
 						<th scope="col">Success Sphere</th>
 						<th scope="col">Part 1 General</th>
 						<th scope="col">Part 2 Comprehensive</th>
@@ -31,12 +39,28 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let item of reflectionData">
-						<th scope="row" class="fw-normal th-label w-50">{{ item.label }}</th>
+						<th><img src="assets/img/Icon-awesome-laugh.png" height="27px" width="27px" alt="The goal growth, not perfection"></th>
+						<th scope="row" class="fw-normal th-label w-50"><b>{{ item.label }}</b></th>
 						<td class="score1">{{ item.score1 }}</td>
 						<td class="score2">{{ item.score2 }}</td>
 					</tr>
 				</tbody>
 			</table>
+			</div>
+			<div class="column1">
+			<table class="table2 mb-0">
+					<tr><p >In Part 1, you reported your
+							perception of your <b>general</b> well-being in each Sphere. In Part 2,
+							you answered questions that
+							assessed each sphere more
+							<b>comprehensively</b>.</p>
+							<p>Are there any notable differences
+							in your scores in the two
+							columns? If so, why do you think
+							those occurred?</p>
+					<textarea rows="9" cols="30" style="border-style: dotted;display: block; margin-left: auto; margin-right: auto;"></textarea></tr>
+			</table>
+			</div>
 		</div>
 		<div class="text-end mt-3" *ngIf="reflectionData?.length">
 			<button class="btn btn-secondary xs me-2 px-4 fw-bold" (click)="skip(3)">
