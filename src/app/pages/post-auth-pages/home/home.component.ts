@@ -5,6 +5,7 @@ import * as moment from 'moment';
 
 import { DataService } from '../../../shared/services/data.service';
 import { ToastService } from '../../../shared/services/toastr.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-home',
@@ -17,13 +18,14 @@ export class HomeComponent implements OnInit {
 		page_size: 5,
 		search: "",
 		ordering: "-created_on",
+		topic:"test"
 	};
 	
 	feeds: any[] = [];
 	feedCount: number = 0;
 	isLoading: boolean = true;
 
-	constructor(private readonly ds: DataService, private readonly sanitizer: DomSanitizer, private readonly toastr: ToastService) { }
+	constructor(private readonly ds: DataService, private readonly sanitizer: DomSanitizer, private readonly toastr: ToastService,private readonly route : ActivatedRoute) { }
 
 	@HostListener('window:scroll', ['$event'])
 	onWindowScroll(e: any) {
@@ -40,6 +42,11 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getPosts();
+		this.route.params.subscribe(params => {
+			const paramValue = params['topic'];
+			console.log(paramValue,"----->abc")
+			// Use the paramValue as needed
+		  });
 	}
 
 	emitter(data: boolean): void {

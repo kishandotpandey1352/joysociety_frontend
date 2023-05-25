@@ -260,7 +260,7 @@ export const sideBarRoutes: ISideBar[] = [
         title: "Topics",
         icon: "assets/img/menu/topic.png",
         activeIcon: "assets/img/menu/topic.png",
-        path: APP_ROUTES.login,
+        path: APP_ROUTES.topics,
         children: [],
         isVisible: true,
         roleAccessibility: [1, 3]
