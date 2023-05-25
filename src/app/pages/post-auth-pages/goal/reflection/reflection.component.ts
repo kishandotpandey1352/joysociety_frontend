@@ -22,6 +22,7 @@ export class ReflectionComponent implements OnInit {
 		{ step: 2, status: "" },
 		{ step: 3, status: "" },
 		{ step: 4, status: "" },
+		{ step: 5, status: "" },
 	];
 	reflectionData: any[] = [];
 	sphereList: any[] = [];
@@ -31,6 +32,9 @@ export class ReflectionComponent implements OnInit {
 	goalForm!: FormGroup;
 	actionSteps: any[] = actionStepsAll;
 	selectedSphereActionStep: string[] = [];
+	sphere_1Value:any;
+	sphere_1name:any;
+	sphere_2Value:any;
 
 	constructor(private readonly ds: DataService, private readonly spinner: NgxSpinnerService, private readonly router: Router, private readonly ts: ToastService) { }
 
@@ -105,6 +109,7 @@ export class ReflectionComponent implements OnInit {
 					});
 					this.reflectionData = part1.map((item: any, i: number) => Object.assign({}, item, part2[i]));
 					this.sphereList = res[2].results;
+					console.log(this.sphereList,'----->val')
 				}
 			},
 			error: (err: any) => console.log(err),
@@ -113,9 +118,12 @@ export class ReflectionComponent implements OnInit {
 	}
 
 	validateSelection(): void {
+
 		if (this.formReflection.get('sphere_1')?.value == this.formReflection.get('sphere_2')?.value) {
 			this.formReflection.get('sphere_2')?.setErrors({ duplicate: true })
 		}
+		this.sphere_1Value=parseInt(this.formReflection.get('sphere_1')?.value)
+		this.sphere_2Value=parseInt(this.formReflection.get('sphere_2')?.value)
 	}
 
 	onSphereChange(): void {
@@ -138,10 +146,10 @@ export class ReflectionComponent implements OnInit {
 	}
 
 	next(screen: number): void {
-		if (screen < 3) {
+		if (screen < 4) {
 			this.totalSteps.find(i => i.step == screen).status = "completed";
 			this.view = screen;
-		} else if (screen == 3) {
+		} else if (screen == 4) {
 			if (this.formReflection.invalid) {
 				this.isSubmitting = true;
 				return;
@@ -158,7 +166,7 @@ export class ReflectionComponent implements OnInit {
 				error: (err: any) => this.spinner.hide(),
 				complete: () => this.spinner.hide()
 			});
-		} else if (screen == 4) {
+		} else if (screen == 5) {
 			if (this.goalForm.invalid) {
 				this.isSubmitting1 = true;
 				return;
@@ -166,7 +174,7 @@ export class ReflectionComponent implements OnInit {
 			this.isSubmitting1 = false;
 			this.totalSteps.find(i => i.step == screen).status = "completed";
 			this.view = screen;
-		} else if (screen == 5) {
+		} else if (screen == 6) {
 			if (this.goalForm.invalid) {
 				this.isSubmitting1 = true;
 				return;

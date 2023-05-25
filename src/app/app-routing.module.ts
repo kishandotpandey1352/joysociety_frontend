@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { PreauthLayoutComponent } from './layout/preauth-layout/preauth-layout.component';
 import { PostauthLayoutComponent } from './layout/postauth-layout/postauth-layout.component';
 import { APP_ROUTES } from "./shared/routes/app-routes";

@@ -80,6 +80,6 @@ export class NavigationBarComponent implements OnInit {
 			};
 			this.menu = routes.find((i: ISideBar) => i.title == 'Members')!.children;
 		}
-		console.log(this.menu);
+		console.log(this.menu,'rohan');
 	}
 }

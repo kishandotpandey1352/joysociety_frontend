@@ -36,6 +36,7 @@ import { SubscriptionsComponent } from './subscriptions/subscriptions.component'
 import { WorkshopViewComponent } from './workshop/workshop-view/workshop-view.component';
 import { TribeViewComponent } from './tribes/tribe-view/tribe-view.component';
 import { PendingGoalUpdateComponent } from './goal/pending-goal-update/pending-goal-update.component';
+import { TopicsComponent } from "./topics/topics.component";
 
 const routes: Routes = [
 	{
@@ -189,6 +190,10 @@ const routes: Routes = [
 		path: APP_ROUTES.subscriptions,
 		component: SubscriptionsComponent,
 		canActivate: [MemberOnlyGuard]
+	},
+	{
+		path:APP_ROUTES.topic,
+		component:TopicsComponent,
 	},
 ];
 

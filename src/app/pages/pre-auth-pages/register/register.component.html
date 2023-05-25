@@ -114,12 +114,12 @@
                         <button class="btn btn-success fw-bold mt-2" (click)="uploadPic()" *ngIf="croppedFile">
                             SAVE
                         </button>
-                        <button class="btn fw-bold mt-2" (click)="submit()" [ngClass]="{
+                        <!-- <button class="btn fw-bold mt-2" (click)="submit()" [ngClass]="{
                             'btn-secondary-outline': !formData['profile_pic'].value,
                             'btn-success': formData['profile_pic'].value
                         }">
                             {{ formData['profile_pic'].value ? 'NEXT' : 'SKIP' }}
-                        </button>
+                        </button> -->
                         <div class="d-grid mb-3">
                             <button class="btn btn-success fw-bold mt-2" (click)="submit()">
                                 SUBMIT
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </ng-container>
-                <ng-container *ngIf="view == 3"> 
+                <!-- <ng-container *ngIf="view == 3"> 
                     <form [formGroup]="form">
                         <div class="mb-3">
                             <p class="question fw-bold">
@@ -166,7 +166,7 @@
                             </button>
                         </div>
                     </form>
-                </ng-container>
+                </ng-container> -->
             </div>
         </div>
     </div>

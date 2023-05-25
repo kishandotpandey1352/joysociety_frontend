@@ -84,7 +84,7 @@ export class TruPartOneReportComponent implements OnInit {
 			};
 			const modalRef: NgbModalRef = this.ms.open(InfoPopupComponent, ngbModalOptions);
 			modalRef.componentInstance.data = {
-				info: `<h5 class='text-center'>In order to take Part 2 of this evaluation, you must be a paid Joy Society member.</h5>`,
+				info: `<h5 class='text-center'>"Take the next step on your journey to holstic success by taking Part 2 of this assessment in the app" Make this bold and large </h5>`,
 				btnContainerClass: "mt-4 d-flex gap-2 justify-content-center",
 				okBtn: "Ok",
 				okBtnClass: "btn-success fw-bold f-x-small px-5",

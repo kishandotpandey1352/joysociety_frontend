@@ -66,6 +66,7 @@ import { WorkshopViewComponent } from './workshop/workshop-view/workshop-view.co
 import { LikeDetailComponent } from './home/feed-type/feed-foot/like-detail/like-detail.component';
 import { TribeViewComponent } from './tribes/tribe-view/tribe-view.component';
 import { PendingGoalUpdateComponent } from './goal/pending-goal-update/pending-goal-update.component';
+import { TopicsComponent } from './topics/topics.component';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -136,6 +137,7 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 		LikeDetailComponent,
 		TribeViewComponent,
 		PendingGoalUpdateComponent,
+  		TopicsComponent,
 	],
 })
 

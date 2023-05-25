@@ -12,6 +12,7 @@ export class APP_ROUTES {
 
 	//* Post Auth Layoyt */
 	public static dashboard: string = 'home';
+	public static topic: string = 'topics'
 	public static profileEdit: string = 'profile-edit';
 	public static updateCreds: string = 'update-credentials';
 	public static billing: string = 'billing-address';

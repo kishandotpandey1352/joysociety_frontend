@@ -13,7 +13,7 @@
                         <ng-container *ngIf="item.content_type == 'QuickPost' || item.content_type == 'LongPost'">
                             <div [innerHTML]="item.content.post" class="word-overflow-wrap"></div>
                         </ng-container>
-                        
+                    
                         <ng-container *ngIf="item.content_type == 'QuestionPoll'">
                             <ng-container *ngIf="item.content._type == 'QUESTION'">
                                 <div class="poll">

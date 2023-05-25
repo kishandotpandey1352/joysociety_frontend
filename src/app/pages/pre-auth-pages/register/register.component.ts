@@ -148,11 +148,11 @@ export class RegisterComponent implements OnInit {
 		if (this.view === 1) {
 			this.view = 2;
 		} else if (this.view === 2) {
-			this.form.addControl("membership_completion", new FormControl("", [Validators.required]));
-			this.form.addControl("purchase_email", new FormControl("", [Validators.required]));
-			this.form.addControl("invite_group_or_partner", new FormControl("", [Validators.required]));
-			this.view = 3;
-		} else {
+			// this.form.addControl("membership_completion", new FormControl("", [Validators.required]));
+			// this.form.addControl("purchase_email", new FormControl("", [Validators.required]));
+			// this.form.addControl("invite_group_or_partner", new FormControl("", [Validators.required]));
+			// this.view = 3;
+		// } else {
 			this.spinner.show();
 			const payload: any = {
 				full_name: this.form.get("first_name")?.value + " " + this.form.get("last_name")?.value,
@@ -162,9 +162,9 @@ export class RegisterComponent implements OnInit {
 				password: this.form.get("password")?.value,
 				tnc: this.form.get("tnc")?.value,
 				profile_pic: this.form.get('profile_pic')?.value,
-				membership_completion: this.form.get('membership_completion')?.value,
-				purchase_email: this.form.get('purchase_email')?.value,
-				invite_group_or_partner: this.form.get('invite_group_or_partner')?.value,
+				membership_completion: "test", //this.form.get('membership_completion')?.value,
+				purchase_email: "test2", //this.form.get('purchase_email')?.value,
+				invite_group_or_partner:"test3", //this.form.get('invite_group_or_partner')?.value,
 				refer: this.referId ? this.referId : ''
 			};
 			console.log(payload)
