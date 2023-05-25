@@ -39,7 +39,7 @@ import { PendingGoalUpdateComponent } from './goal/pending-goal-update/pending-g
 import { TopicsComponent } from "./topics/topics.component";
 const routes: Routes = [
 	{
-		path: APP_ROUTES.dashboard+"/:topic",
+		path: APP_ROUTES.dashboard,
 		component: HomeComponent,
 	},
 	{

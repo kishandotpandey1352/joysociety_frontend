@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 		page_size: 5,
 		search: "",
 		ordering: "-created_on",
-		topic:"test"
+		// topic:"test"
 	};
 	
 	feeds: any[] = [];
@@ -42,11 +42,11 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getPosts();
-		this.route.params.subscribe(params => {
-			const paramValue = params['topic'];
-			console.log(paramValue,"----->abc")
-			// Use the paramValue as needed
-		  });
+		// this.route.params.subscribe(params => {
+		// 	const paramValue = params['topic'];
+		// 	console.log(paramValue,"----->abc")
+		// 	// Use the paramValue as needed
+		//   });
 	}
 
 	emitter(data: boolean): void {
