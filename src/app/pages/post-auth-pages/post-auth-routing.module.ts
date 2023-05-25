@@ -36,11 +36,15 @@ import { SubscriptionsComponent } from './subscriptions/subscriptions.component'
 import { WorkshopViewComponent } from './workshop/workshop-view/workshop-view.component';
 import { TribeViewComponent } from './tribes/tribe-view/tribe-view.component';
 import { PendingGoalUpdateComponent } from './goal/pending-goal-update/pending-goal-update.component';
-
+import { TopicsComponent } from "./topics/topics.component";
 const routes: Routes = [
 	{
-		path: APP_ROUTES.dashboard,
+		path: APP_ROUTES.dashboard+"/:topic",
 		component: HomeComponent,
+	},
+	{
+		path:APP_ROUTES.topics,
+		component:TopicsComponent
 	},
 	{
 		path: APP_ROUTES.profileEdit,

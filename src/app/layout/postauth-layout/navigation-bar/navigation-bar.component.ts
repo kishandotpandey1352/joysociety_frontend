@@ -55,7 +55,7 @@ export class NavigationBarComponent implements OnInit {
 	private loadSideBar(url: string): void {
 		this.currentRoute = url;
 		const routes: any = sideBarRoutes.filter((i: ISideBar) => i.roleAccessibility.includes(this.profileDetail.role));
-		if (url.includes(APP_ROUTES.dashboard) || url.includes(APP_ROUTES.invites) || url.includes(APP_ROUTES.workshops) ||
+		if (url.includes(APP_ROUTES.dashboard) || url.includes(APP_ROUTES.invites) || url.includes(APP_ROUTES.workshops) || url.includes(APP_ROUTES.topics) ||
 			url.includes(APP_ROUTES.tru) || url.includes(APP_ROUTES.goal) || url.includes(APP_ROUTES.events) || url.includes(APP_ROUTES.tribes)
 			|| url.includes(APP_ROUTES.plans) || url.includes(APP_ROUTES.subscriptions)) {
 			this.sidebarHeader = {

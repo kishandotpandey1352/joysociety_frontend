@@ -112,6 +112,7 @@ export class DataService {
 		}
 		return url + queryString;
 	}
+	
 
 	public downloadDocumentBlob(downLoadUrl: string, fileName: string, extension: string) {
 		var HTTPOptions = {
