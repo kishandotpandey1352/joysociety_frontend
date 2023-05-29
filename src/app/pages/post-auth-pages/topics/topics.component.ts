@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../shared/services/data.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-topics',
   templateUrl: './topics.component.html',
@@ -7,12 +9,12 @@ import { DataService } from '../../../shared/services/data.service';
 })
 export class TopicsComponent implements OnInit {
 
-  constructor( private readonly ds:DataService) { }
+  constructor( private readonly ds:DataService,private readonly router:Router,private readonly active:ActivatedRoute) { }
 
   ngOnInit(): void {
   }
   allApiTopics(data:any){
-    // this.ds.formUrlParam().subscribe
+    this.router.navigate(['/home', data]);
   }
 }
 

@@ -1,58 +1,51 @@
 <div class="">
     <div class="row-col-lg-2">
         <div class="card-container">
-            <div class="fw-bold mb-3">topics </div>
+            <div class="fw-bold mb-3">Topics </div>
             <ul class="goal-subnav mb-0 ">
             <div class="row m-2">
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;" (click)="allApiTopics('Emotional Well-Being')">
-                    <i class="fa-brands fa-nfc-directional m-1" style="color: white; font-size: 30px;" ></i>
-                    <a href="home" [routerLinkActive]="['active-nav']" style="color:white">
-                        Emotional Well-Being</a>
+                <li class=" col-md-4 m-2 p-4 rounded " style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('emotionalWellBeing')">
+                    <a  [routerLinkActive]="['active-nav']" style="color:white;" class="d-flex align-items-center">
+                    <i class="fa-brands fa-nfc-directional m-1" style="color: white; font-size: 30px;" ></i>Emotional Well-Being</a>
                         
                 </li>
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;" (click)="allApiTopics('socialWellBeing')" >
-                    <i class="fab fa-500px m-1" style="color: white; font-size: 30px;"></i>
-                    <a href="#" style="color:white" >
-                        Physical Well-Being</a>
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('phusicalWellBeing')">
+                    <a style="color:white"class="d-flex align-items-center" >
+                    <i class="fab fa-500px m-1" style="color: white; font-size: 30px;"></i>Physical Well-Being</a>
                 </li>
             </div>
             <div class="row m-2">
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;">
-                    <i class="fas fa-grin-hearts m-1" style="color: white; font-size: 30px;"></i>
-                    <a href="" style="color:white">Romantic Well-Being</a>
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('romaanticWellBeing')">
+                    <a  style="color:white" class="d-flex align-items-center">
+                    <i class="fas fa-grin-hearts m-1" style="color: white; font-size: 30px;"></i>Romantic Well-Being</a>
                 </li>
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;">
-                    <i class="fa-solid fa-people-arrows m-1" style="color: white; font-size: 30px;"></i>  
-                    <a href="" style="color:white" >Social Well-Being</a>
-                </li>
-            </div>
-            <div class="row m-2">
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;">
-                    <i class="fa-solid fa-people-arrows m-1" style="color: white; font-size: 30px;"></i>  
-                    <a href="" style="color:white">
-                        Family Well-Being
-                    </a>
-                </li>
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;">
-                    <i class='far fa-bell m-1' style="color: white; font-size: 30px;"></i>  
-                    <a href="" style="color:white">
-                        Spiritual Well-Being
-                    </a>
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('socialWellBeing')">
+                    <a  style="color:white"class="d-flex align-items-center"  >
+                    <i class="fa-solid fa-people-arrows m-1" style="color: white; font-size: 30px;"></i> Social Well-Being</a> 
+                
                 </li>
             </div>
             <div class="row m-2">
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;">
-                    <i class="fa-regular fa-signal m-1"style="color: white; font-size: 30px;"></i>
-                    <a href="" style="color:white">
-                        Financial Well-Being </a>
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('familyWellBeing')">
+                    <a  style="color:white"class="d-flex align-items-center" >
+                    <i class="fa-solid fa-people-arrows m-1" style="color: white; font-size: 30px;"></i> Family Well-Being</a>  
+
                 </li>
-                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;">
-                    <i class="fa-regular fa-signal m-1"style="color: white; font-size: 30px;"></i>
-                    <a href="" style="color:white">
-                        Career Well-Being </a>
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('spiritualWellBeing')">
+                    <a  style="color:white"class="d-flex align-items-center" >
+                    <i class='far fa-bell m-1' style="color: white; font-size: 30px;"></i>Spiritual Well-Being</a>
                 </li>
             </div>
-               
+            <div class="row m-2">
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('financialWellBeing')">
+                    <a  style="color:white"class="d-flex align-items-center" >
+                    <i class="fa-regular fa-signal m-1"style="color: white; font-size: 30px;"></i>Financial Well-Being </a>
+                </li>
+                <li class=" col-md-4 m-2 p-4 rounded" style="background-color:#0b675f;cursor: pointer" (click)="allApiTopics('careerWellBeing')">
+                    <a  style="color:white"class="d-flex align-items-center" >
+                        <i class="fa-brands fa-figma" style="color: white; font-size: 30px;"></i> Career Well-Being </a>
+                </li>
+            </div>
             </ul>
         </div>
     </div>   

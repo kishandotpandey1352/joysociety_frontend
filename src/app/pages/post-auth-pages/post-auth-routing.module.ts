@@ -43,6 +43,10 @@ const routes: Routes = [
 		component: HomeComponent,
 	},
 	{
+		path: APP_ROUTES.dashboard+'/:topic',
+		component: HomeComponent,
+	},
+	{
 		path:APP_ROUTES.topics,
 		component:TopicsComponent
 	},

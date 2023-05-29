@@ -13,22 +13,30 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+	
 	payload: any = {
 		page: 1,
 		page_size: 5,
 		search: "",
 		ordering: "-created_on",
-		// topic:"test"
+		topic:"test",
 	};
-	
 	feeds: any[] = [];
 	feedCount: number = 0;
 	isLoading: boolean = true;
+	paramValue = '';
 
-	constructor(private readonly ds: DataService, private readonly sanitizer: DomSanitizer, private readonly toastr: ToastService,private readonly route : ActivatedRoute) { }
+	constructor(private readonly ds: DataService, private readonly sanitizer: DomSanitizer, private readonly toastr: ToastService,private readonly route : ActivatedRoute) { 
+		this.route.params.subscribe(params => {
+			this.paramValue =  params['topic']
+		  });
+
+		  this.payload.topic = this.paramValue;
+	}
 
 	@HostListener('window:scroll', ['$event'])
 	onWindowScroll(e: any) {
+		 
 		const pos: number = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
 		const max: number = document.documentElement.scrollHeight;
 		if (pos == max) {
@@ -42,15 +50,11 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getPosts();
-		// this.route.params.subscribe(params => {
-		// 	const paramValue = params['topic'];
-		// 	console.log(paramValue,"----->abc")
-		// 	// Use the paramValue as needed
-		//   });
+		
 	}
 
 	emitter(data: boolean): void {
-		if (data) {
+ 		if (data) {
 			this.getPosts();
 		}
 	}
