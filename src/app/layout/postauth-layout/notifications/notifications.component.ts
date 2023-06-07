@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 interface IChatFilters {
 	label: string,
 	isActive: boolean
@@ -20,13 +20,14 @@ export class NotificationsComponent implements OnInit {
 	notificationOld: any[] = [];
 	ddHeight!: number;
 	selectedChatFilter: string = "All";
+	notificationData:any;
 
 	@HostListener('window:resize', ['$event'])
 	onResize() {
 		this.ddHeight = window.innerHeight - 150;
 	}
 
-	constructor() {
+	constructor( private http: HttpClient) {
 		this.onResize();
 	}
 
@@ -50,16 +51,26 @@ export class NotificationsComponent implements OnInit {
 	private getNotifications(): void {
 		const notifications: any[] = [
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: true },
-			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: true },
-			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: true },
-			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: true },
+			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
+			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
+			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false }, 
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
 		];
 		this.notificationNew = notifications.filter(i => i.isNew);
+		console.log(this.notificationNew,'notificationNew')
 		this.notificationOld = notifications.filter(i => !i.isNew);
+		console.log(this.notificationOld,'notificationNew')
+		const url='http://3.132.74.176:8000/notification/notification/'
+		this.http.get(url).subscribe(response=>{
+			this.notificationData=response;
+		})
 	}
+	notificationBar(){
+		
+	}
+	
 
 }

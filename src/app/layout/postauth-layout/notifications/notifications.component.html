@@ -50,14 +50,14 @@
                 </ul>
             </li>
     
-            <li class="no-hover notification-items" *ngIf="selectedChatFilter == 'All' && notificationOld.length">
+            <!-- <li class="no-hover notification-items" *ngIf="selectedChatFilter == 'All' && notificationOld.length">
                 <div class="section-title x-small">Earlier</div>
                 <ul class="p-0 section-body">
                     <ng-container [ngTemplateOutlet]="notificationTemplate" *ngFor="let item of notificationOld"
                         [ngTemplateOutletContext]="{item: item}">
                     </ng-container>
                 </ul>
-            </li>
+            </li> -->
         </div>
 
         <hr class="section-divider mx-0">
@@ -68,18 +68,20 @@
 	</ul>
 </div>
 
-<ng-template let-item="item" #notificationTemplate>
+<ng-template let-item="item" #notificationTemplate >
+    <div *ngFor="let i of notificationData">
     <li ngbDropdownItem class="pointer">
         <a [routerLink]="['/']" class="ps-2 rel">
             <div class="d-flex align-items-center gap-2">
-                <img [src]="item.img" alt="pic" width="48" height="48">
+                <img src="assets/img/avatar.png" alt="pic" width="48" height="48">
                 <div class="notification-text">
-                    <strong>{{ item.name }}</strong> 
-                    <span class="mute ms-1">{{ item.description }}</span>
-                    <div class="mute">{{ item.time }}</div>
+                    <strong>{{ i.name }}</strong> 
+                    <span class="mute ms-1">{{ i.description }}</span>
+                    <div class="mute">{{ i.time }}</div>
                 </div>
             </div>
             <div *ngIf="item.isNew" class="notification-new"></div>
         </a>
     </li>
+</div>
 </ng-template>
