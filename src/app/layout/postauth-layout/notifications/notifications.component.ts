@@ -54,7 +54,7 @@ export class NotificationsComponent implements OnInit {
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: true },
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: true },
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
-			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
+			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false }, 
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
 			{ img: "assets/img/avatar.png", name: "Joy added", description: "Meditate & Motivate", time: "5h ago", isNew: false },
 		];

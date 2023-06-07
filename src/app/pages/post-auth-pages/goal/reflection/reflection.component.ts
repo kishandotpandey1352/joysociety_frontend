@@ -166,7 +166,9 @@ export class ReflectionComponent implements OnInit {
 				error: (err: any) => this.spinner.hide(),
 				complete: () => this.spinner.hide()
 			});
-		} else if (screen == 5) {
+		} 
+		else if (screen == 5) {
+			
 			if (this.goalForm.invalid) {
 				this.isSubmitting1 = true;
 				return;
@@ -174,7 +176,8 @@ export class ReflectionComponent implements OnInit {
 			this.isSubmitting1 = false;
 			this.totalSteps.find(i => i.step == screen).status = "completed";
 			this.view = screen;
-		} else if (screen == 6) {
+		}
+		 else if (screen == 6) {
 			if (this.goalForm.invalid) {
 				this.isSubmitting1 = true;
 				return;
@@ -189,12 +192,17 @@ export class ReflectionComponent implements OnInit {
 			}
 			this.ds.post(ApiRoutes.goal, this.goalForm.value).subscribe({
 				next: (res: any) => {
+					
 					if (!!res) {
 						this.ts.success("Goal set successfully!", "Success");
 						this.router.navigate([APP_ROUTES.goal]);
+						console.log("shivani is a developer .....");	
 					}
 				},
-				error: (err: any) => this.spinner.hide(),
+				error: (err: any) =>{ 
+					console.log('error shivani orignal');
+					
+					this.spinner.hide()},
 				complete: () => this.spinner.hide()
 			});
 		}
