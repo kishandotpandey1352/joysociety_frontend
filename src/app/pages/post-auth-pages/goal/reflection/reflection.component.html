@@ -16,7 +16,7 @@
 	<ng-container *ngIf="view == 1">
 		<h5 class="mb-0">TRU Success Evaluation</h5>
 		<p class="text-muted">
-			 TRU Success Evaluation Scores/Results - Below are your results
+			TRU Success Evaluation Scores/Results - Below are your results
 		</p>
 		<div class="table-responsive screen-shadow">
 			<table class="table mb-0">
@@ -82,12 +82,13 @@
 							<small [hidden]="!formDataReflection['sphere_2'].errors['duplicate']">*Please Select a
 								different sphere.</small>
 						</div>
-							</div>
+					</div>
 					<div class="col-md-6 mb-4">
 						<!-- <label>
 							How will your life look different in 1 year if/when you improve your success in Sphere #1?
 						</label> -->
-						<textarea class="form-control" cols="30" rows="11" formControlName="sphere_1_answer" placeholder="How will your life look different in 1 year if/when you improve your success in Sphere #1?"></textarea>
+						<textarea class="form-control" cols="30" rows="11" formControlName="sphere_1_answer"
+							placeholder="How will your life look different in 2 year if/when you improve your success in Sphere #1?"></textarea>
 						<div *ngIf="isSubmitting && formDataReflection['sphere_1_answer'].errors" class="err">
 							<small [hidden]="!formDataReflection['sphere_1_answer'].errors['required']">*This field is
 								required.</small>
@@ -95,7 +96,8 @@
 					</div>
 					<div class="col-md-6 mb-4">
 						<!-- <label>What about Sphere #2?</label> -->
-						<textarea class="form-control" cols="30" rows="11" formControlName="sphere_2_answer" placeholder="What about Sphere #2?"></textarea>
+						<textarea class="form-control" cols="30" rows="11" formControlName="sphere_2_answer"
+							placeholder="What about Sphere #2?"></textarea>
 						<div *ngIf="isSubmitting && formDataReflection['sphere_2_answer'].errors" class="err">
 							<small [hidden]="!formDataReflection['sphere_2_answer'].errors['required']">*This field is
 								required.</small>
@@ -126,13 +128,13 @@
 						<label>Focus Sphere:</label>
 						<select class="form-control" formControlName="sphere" (change)="onSphereChange()">
 							<ng-container *ngFor="let item of sphereList">
-							  <ng-container *ngIf="item.id === sphere_1Value">
-								<option [value]="item.id">
-								  {{ item.name }}
-								</option>
-							  </ng-container>
+								<ng-container *ngIf="item.id === sphere_1Value">
+									<option [value]="item.id">
+										{{ item.name }}
+									</option>
+								</ng-container>
 							</ng-container>
-						  </select>
+						</select>
 						<div *ngIf="isSubmitting1 && formDataGoal['sphere'].errors" class="err">
 							<small [hidden]="!formDataGoal['sphere'].errors['required']">
 								*Please Select a sphere.
@@ -179,17 +181,17 @@
 							Use this space to develop your action plan
 						</p>
 					</div>
-						<ng-container *ngIf="formDataGoal['sphere'].value">
-							<div class="col-md-6 mb-4">
-								<label class="mb-3">Action step</label>
-								<div class="mb-2">
-									<select class="form-control" formControlName="action_step_1">
-										<option value="">Select</option>
-										<option [value]="item" *ngFor="let item of selectedSphereActionStep">
-											{{ item }}
-										</option>
-									</select>
-									<div *ngIf="isSubmitting1 && formDataGoal['action_step_1'].errors" class="err">
+					<ng-container *ngIf="formDataGoal['sphere'].value">
+						<div class="col-md-6 mb-4">
+							<label class="mb-3">Action step</label>
+							<div class="mb-2">
+								<select class="form-control" formControlName="action_step_1">
+									<option value="">Select</option>
+									<option [value]="item" *ngFor="let item of selectedSphereActionStep">
+										{{ item }}
+									</option>
+								</select>
+								<div *ngIf="isSubmitting1 && formDataGoal['action_step_1'].errors" class="err">
 									<small [hidden]="!formDataGoal['action_step_1'].errors['required']">*Please select
 										one action.</small>
 								</div>
@@ -249,7 +251,7 @@
 						<div class="col-md-3 mb-4">
 							<label class="mb-3">Time Formate</label>
 							<div class="mb-2">
-								
+
 								<select class="form-control" formControlName="action_step_5">
 									<option value="">Select</option>
 									<option value="Hours">
@@ -325,9 +327,9 @@
 						<div class="col-md-3 mb-4">
 							<label class="mb-3">Target Completion Date</label>
 							<div class="mb-2">
-								
+
 								<div class="input-group">
-									<input  class="form-control" placeholder="yyyy-mm-dd"
+									<input class="form-control" placeholder="yyyy-mm-dd"
 										formControlName="completion_date_1" ngbDatepicker #d1="ngbDatepicker" />
 									<div (click)="d1.toggle()" class="btn-cal pointer">
 										<img src="assets/img/calender.png" alt="calender" width="17" height="18">
@@ -433,13 +435,13 @@
 						<label>Focus Sphere:</label>
 						<select class="form-control" formControlName="sphere" (change)="onSphereChange()">
 							<ng-container *ngFor="let item of sphereList">
-							  <ng-container *ngIf="item.id === sphere_2Value">
-								<option [value]="item.id">
-								  {{ item.name }}
-								</option>
-							  </ng-container>
+								<ng-container *ngIf="item.id === sphere_2Value">
+									<option [value]="item.id">
+										{{ item.name }}
+									</option>
+								</ng-container>
 							</ng-container>
-						  </select>
+						</select>
 						<div *ngIf="isSubmitting1 && formDataGoal['sphere'].errors" class="err">
 							<small [hidden]="!formDataGoal['sphere'].errors['required']">
 								*Please Select a sphere.
@@ -486,17 +488,17 @@
 							Use this space to develop your action plan
 						</p>
 					</div>
-						<ng-container *ngIf="formDataGoal['sphere'].value">
-							<div class="col-md-6 mb-4">
-								<label class="mb-3">Action step</label>
-								<div class="mb-2">
-									<select class="form-control" formControlName="action_step_1">
-										<option value="">Select</option>
-										<option [value]="item" *ngFor="let item of selectedSphereActionStep">
-											{{ item }}
-										</option>
-									</select>
-									<div *ngIf="isSubmitting1 && formDataGoal['action_step_1'].errors" class="err">
+					<ng-container *ngIf="formDataGoal['sphere'].value">
+						<div class="col-md-6 mb-4">
+							<label class="mb-3">Action step</label>
+							<div class="mb-2">
+								<select class="form-control" formControlName="action_step_1">
+									<option value="">Select</option>
+									<option [value]="item" *ngFor="let item of selectedSphereActionStep">
+										{{ item }}
+									</option>
+								</select>
+								<div *ngIf="isSubmitting1 && formDataGoal['action_step_1'].errors" class="err">
 									<small [hidden]="!formDataGoal['action_step_1'].errors['required']">*Please select
 										one action.</small>
 								</div>
@@ -553,7 +555,7 @@
 						<div class="col-md-3 mb-4">
 							<label class="mb-3">Time Formate</label>
 							<div class="mb-2">
-								
+
 								<select class="form-control" formControlName="action_step_5">
 									<option value="">Select</option>
 									<option value="Hours">
@@ -625,14 +627,14 @@
 								</select>
 							</div>
 						</div>
-						
+
 
 						<div class="col-md-3 mb-4">
 							<label class="mb-3">Target Completion Date</label>
 							<div class="mb-2">
-								
+
 								<div class="input-group">
-									<input  class="form-control" placeholder="yyyy-mm-dd"
+									<input class="form-control" placeholder="yyyy-mm-dd"
 										formControlName="completion_date_1" ngbDatepicker #d1="ngbDatepicker" />
 									<div (click)="d1.toggle()" class="btn-cal pointer">
 										<img src="assets/img/calender.png" alt="calender" width="17" height="18">
@@ -760,41 +762,41 @@
 							</small>
 						</div>
 					</div>
-				
+
 					<div class="col-md-12 mb-4">
 						<label class="mb-3">
 							What Joy Society offerings can be leveraged to help you achieve your goals?
 						</label>
 						<label class="custom-checkbox-container terms mb-3 fw-normal">
-                            Connection Sessions
-                            <input type="checkbox" formControlName="connection_sessions">
-                            <span class="checkmark"></span>
-                        </label>
+							Connection Sessions
+							<input type="checkbox" formControlName="connection_sessions">
+							<span class="checkmark"></span>
+						</label>
 						<label class="custom-checkbox-container terms mb-3 fw-normal">
-                            Networking & connecting with peers
-                            <input type="checkbox" formControlName="networking_connecting">
-                            <span class="checkmark"></span>
-                        </label>
+							Networking & connecting with peers
+							<input type="checkbox" formControlName="networking_connecting">
+							<span class="checkmark"></span>
+						</label>
 						<label class="custom-checkbox-container terms mb-3 fw-normal">
-                            Goal Accountability Checkpoints
-                            <input type="checkbox" formControlName="accountablity_checkpoint">
-                            <span class="checkmark"></span>
-                        </label>
+							Goal Accountability Checkpoints
+							<input type="checkbox" formControlName="accountablity_checkpoint">
+							<span class="checkmark"></span>
+						</label>
 						<label class="custom-checkbox-container terms mb-3 fw-normal">
-                            Self-paced learning modules
-                            <input type="checkbox" formControlName="self_paced_learning">
-                            <span class="checkmark"></span>
-                        </label>
+							Self-paced learning modules
+							<input type="checkbox" formControlName="self_paced_learning">
+							<span class="checkmark"></span>
+						</label>
 						<label class="custom-checkbox-container terms mb-3 fw-normal">
-                            Educational webinars
-                            <input type="checkbox" formControlName="wducationnal_webinar">
-                            <span class="checkmark"></span>
-                        </label>
+							Educational webinars
+							<input type="checkbox" formControlName="wducationnal_webinar">
+							<span class="checkmark"></span>
+						</label>
 						<label class="custom-checkbox-container terms mb-3 fw-normal">
-                            Join the Goal Getters tribe
-                            <input type="checkbox" formControlName="join_tribe">
-                            <span class="checkmark"></span>
-                        </label>
+							Join the Goal Getters tribe
+							<input type="checkbox" formControlName="join_tribe">
+							<span class="checkmark"></span>
+						</label>
 					</div>
 				</div>
 				<div class="text-end mt-3">

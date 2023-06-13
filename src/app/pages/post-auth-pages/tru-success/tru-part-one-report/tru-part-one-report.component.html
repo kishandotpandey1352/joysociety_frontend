@@ -23,16 +23,16 @@
 		</div>
 		<div class="offset-xl-4 col-xl-4 col-lg-6">
 			<div class="report-actions">
-				<button class="btn btn-success fw-bold py-1" (click)="gotoPart2()">
+				<button class="btn btn-success fw-bold py-1 my-b" (click)="gotoPart2()">
 					Comprehensive Evaluation
 				</button>
-	
-				<button class="btn btn-success fw-bold p-1" (click)="downloadReport()">
+
+				<button class="btn btn-success fw-bold p-1 my-b" (click)="downloadReport()">
 					<img src="assets/img/pdf-logo-solid.png" alt="pdf" width="36" height="36">
 					Download pdfs
 				</button>
-				
-				<button class="btn btn-success fw-bold py-1" (click)="done()">
+
+				<button class="btn btn-success fw-bold py-1 my-b" (click)="done()">
 					Done
 				</button>
 			</div>
@@ -42,29 +42,32 @@
 
 <div class="card-container mt-4">
 	<p>
-		You perceive your <b>highest</b> level of satisfaction and happiness to be in the 
+		You perceive your <b>highest</b> level of satisfaction and happiness to be in the
 		<b *ngFor="let item of maxScores; let i = index">
 			<ng-container *ngIf="maxScores.length == 1">{{ item.label }}</ng-container>
 			<ng-container *ngIf="maxScores.length > 1">
-				{{i === maxScores.length - 1 ? 'and ' : '' }}{{ item.label }}{{i === maxScores.length - 2 ? '' : ',&nbsp;' }}
+				{{i === maxScores.length - 1 ? 'and ' : '' }}{{ item.label }}{{i === maxScores.length - 2 ? '' :
+				',&nbsp;' }}
 			</ng-container>
-		</b> 
+		</b>
 		Success Sphere.
 	</p>
 
 	<p>
-		You perceive your <b>lowest</b> level of satisfaction and happiness to be in the 
+		You perceive your <b>lowest</b> level of satisfaction and happiness to be in the
 		<b *ngFor="let item of lowScores; let i = index">
 			<ng-container *ngIf="lowScores.length == 1">{{ item.label }}</ng-container>
 			<ng-container *ngIf="lowScores.length > 1">
-				{{i === lowScores.length - 1 ? 'and ' : '' }}{{ item.label }}{{i === lowScores.length - 2 ? '' : ',&nbsp;' }}
+				{{i === lowScores.length - 1 ? 'and ' : '' }}{{ item.label }}{{i === lowScores.length - 2 ? '' :
+				',&nbsp;' }}
 			</ng-container>
-		</b> 
+		</b>
 		Success Sphere.
 	</p>
 
 	<p>
-		<b>Your next step:</b> Click the button above to take Part 2 of this evaluation, a deeper dive into your scores in each sphere
+		<b>Your next step:</b> Click the button above to take Part 2 of this evaluation, a deeper dive into your scores
+		in each sphere
 	</p>
 	<!-- <p>
 		We're excited for you to go deeper into these results with Part 2 of the TRU Success Evaluation, a more
