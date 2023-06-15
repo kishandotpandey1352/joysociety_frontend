@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FeedHeadComponent implements OnInit {
 	@Input() data: any;
+	profilePath:string=""
 	
 	constructor() { }
 
 	ngOnInit(): void {
-		// console.log("head", this.data)
+		this.profilePath=`/members/${this.data.content.user.id}`
 	}
 }

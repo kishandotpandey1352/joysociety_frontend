@@ -121,7 +121,7 @@ const profileAccountRoutes: ISideBar[] = [
         title: "Badges",
         icon: "",
         activeIcon: "",
-        path: APP_ROUTES.login,
+        path: APP_ROUTES.userBadges,
         children: [],
         isVisible: true,
         roleAccessibility: [1, 3]
@@ -237,15 +237,15 @@ export const sideBarRoutes: ISideBar[] = [
         isVisible: true,
         roleAccessibility: [1, 3]
     },
-    {
-        title: "About",
-        icon: "assets/img/menu/about.png",
-        activeIcon: "assets/img/menu/about-active.png",
-        path: APP_ROUTES.login,
-        children: [],
-        isVisible: true,
-        roleAccessibility: [1, 3]
-    },
+    // {
+    //     title: "About",
+    //     icon: "assets/img/menu/about.png",
+    //     activeIcon: "assets/img/menu/about-active.png",
+    //     path: APP_ROUTES.login,
+    //     children: [],
+    //     isVisible: true,
+    //     roleAccessibility: [1, 3]
+    // },
     {
         title: "Invite",
         icon: "assets/img/menu/invite.png",
@@ -332,7 +332,7 @@ export const sideBarRoutes: ISideBar[] = [
         title: "Need Help?",
         icon: "assets/img/menu/help.png",
         activeIcon: "assets/img/menu/help.png",
-        path: APP_ROUTES.login,
+        path: APP_ROUTES.contact,
         children: [],
         isVisible: true,
         roleAccessibility: [1, 3]

@@ -2,48 +2,47 @@
     <div class="container">
         <div class="auth-box">
             <div class="text-center my-5">
-                <img src="assets/img/logo.png" alt="logo" class="img-fluid" width="240" height="60">
+                <img src="assets/img/log_logo.png" alt="logo" class="img-fluid" width="240" height="60">
             </div>
             <div class="auth-form mx-auto">
                 <h4 class="fw-normal mb-3">Sign In</h4>
                 <form [formGroup]="form">
                     <div class="mb-3">
                         <ng-container *ngIf="defaultLogin == 1">
-                            <input type="email" class="form-control" placeholder="Enter Email" formControlName="username"
+                            <input type="email" class="form-control" placeholder="Enter Email"
+                                formControlName="username"
                                 [ngClass]="{'invalid': isSubmitting && formData['username'].errors}">
                         </ng-container>
                         <ng-container *ngIf="defaultLogin == 2">
-                            <ngx-intl-tel-input 
-                                [cssClass]="mobInvalid" 
+                            <ngx-intl-tel-input [cssClass]="mobInvalid"
                                 [preferredCountries]="[CountryISO.UnitedStates, CountryISO.India]"
-                                [enableAutoCountrySelect]="false" 
-                                [enablePlaceholder]="true" 
-                                [searchCountryFlag]="true"
+                                [enableAutoCountrySelect]="false" [enablePlaceholder]="true" [searchCountryFlag]="true"
                                 [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
-                                [selectFirstCountry]="false" 
-                                [selectedCountryISO]="defaultCountry"
-                                [maxLength]="10"
-                                [phoneValidation]="true" 
-                                [separateDialCode]="false"
-                                name="username" 
+                                [selectFirstCountry]="false" [selectedCountryISO]="defaultCountry" [maxLength]="10"
+                                [phoneValidation]="true" [separateDialCode]="false" name="username"
                                 formControlName="username">
                             </ngx-intl-tel-input>
                         </ng-container>
                         <div class="mt-1 d-flex justify-content-end link link-secondary xs">
                             Login via
-                            <a href="javascript:;" class="link link-secondary xs mx-1" (click)="onChangeLoginMethod(1)" [ngClass]="{'selected-method': defaultLogin == 1}">
+                            <a href="javascript:;" class="link link-secondary xs mx-1" (click)="onChangeLoginMethod(1)"
+                                [ngClass]="{'selected-method': defaultLogin == 1}">
                                 Email
                             </a>or
-                            <a href="javascript:;" class="link link-secondary xs mx-1" (click)="onChangeLoginMethod(2)" [ngClass]="{'selected-method': defaultLogin == 2}">
+                            <a href="javascript:;" class="link link-secondary xs mx-1" (click)="onChangeLoginMethod(2)"
+                                [ngClass]="{'selected-method': defaultLogin == 2}">
                                 Mobile
                             </a>
                         </div>
                     </div>
                     <div class="rel mb-3">
-                        <input [type]="passwordType" class="form-control" placeholder="Password" formControlName="password" 
-                        [ngClass]="{'invalid': isSubmitting && formData['password'].errors}">
-                        <img class="eye" src="assets/img/eye-off.png" alt="eye off" width="18" height="18" (click)="passwordType = 'text'" *ngIf="passwordType == 'password'">
-                        <img class="eye" src="assets/img/eye-off.png" alt="eye on" width="18" height="18" (click)="passwordType = 'password'" *ngIf="passwordType == 'text'">
+                        <input [type]="passwordType" class="form-control" placeholder="Password"
+                            formControlName="password"
+                            [ngClass]="{'invalid': isSubmitting && formData['password'].errors}">
+                        <img class="eye" src="assets/img/eye-off.png" alt="eye off" width="18" height="18"
+                            (click)="passwordType = 'text'" *ngIf="passwordType == 'password'">
+                        <img class="eye" src="assets/img/eye-off.png" alt="eye on" width="18" height="18"
+                            (click)="passwordType = 'password'" *ngIf="passwordType == 'text'">
                     </div>
                     <div class="d-grid">
                         <button class="btn btn-success fw-bold" (click)="submit()">
@@ -51,7 +50,8 @@
                         </button>
                     </div>
                     <div class="my-1 d-flex justify-content-end">
-                        <a [routerLink]="['/' + routes.forgotPassword]" class="link link-secondary xs">Forgot Password?</a>
+                        <a [routerLink]="['/' + routes.forgotPassword]" class="link link-secondary xs">Forgot
+                            Password?</a>
                     </div>
                 </form>
 
@@ -68,7 +68,7 @@
 
                 <hr class="auth-h-divider my-3">
                 <p class="text-center mb-0">
-                    Not a Member? 
+                    Not a Member?
                     <a [routerLink]="['/' + routes.signUp]" class="link link-success fw-bold">
                         Create Account
                     </a>

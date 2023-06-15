@@ -1,5 +1,8 @@
 <div class="feed-head d-flex align-items-center gap-2 mb-3">
-	<img [src]="data.content.user.profile_pic || 'assets/img/avatar-placeholder.png'" alt="profile pic" class="img-round" width="35" height="35">
+	<a [routerLink]="profilePath">
+		<img [src]="data.content.user.profile_pic || 'assets/img/avatar-placeholder.png'" alt="profile pic"
+			class="img-round profile" width="35" height="35">
+	</a>
 	<div style="line-height: 18px;">
 		<b>{{ data.content.user.first_name }} {{ data.content.user.last_name }}</b>
 		<p class="text-muted f-x-small mb-0">

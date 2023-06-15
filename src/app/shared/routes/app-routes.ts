@@ -35,4 +35,6 @@ export class APP_ROUTES {
 	public static truPart2: string = 'tru-success-evaluation/comprehensive';
 	public static truPart2Report: string = 'tru-success-evaluation/comprehensive-report';
 	public static topics:string='topics'
+	public static contact:string="contact"
+	public static userBadges:string="user/badges"
 }

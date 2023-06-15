@@ -37,6 +37,8 @@ import { WorkshopViewComponent } from './workshop/workshop-view/workshop-view.co
 import { TribeViewComponent } from './tribes/tribe-view/tribe-view.component';
 import { PendingGoalUpdateComponent } from './goal/pending-goal-update/pending-goal-update.component';
 import { TopicsComponent } from "./topics/topics.component";
+import { ContactComponent } from "./contact/contact.component";
+import { BadgesComponent } from "./profile/badges/badges.component";
 const routes: Routes = [
 	{
 		path: APP_ROUTES.dashboard,
@@ -202,6 +204,13 @@ const routes: Routes = [
 		path:APP_ROUTES.topic,
 		component:TopicsComponent,
 	},
+	{
+		path:APP_ROUTES.contact,
+		component:ContactComponent
+	},{
+		path:APP_ROUTES.userBadges,
+		component:BadgesComponent
+	}
 ];
 
 @NgModule({
