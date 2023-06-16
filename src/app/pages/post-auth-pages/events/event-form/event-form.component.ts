@@ -9,6 +9,7 @@ import { DataService } from '../../../../shared/services/data.service';
 import { APP_ROUTES } from '../../../../shared/routes/app-routes';
 import { ToastService } from '../../../../shared/services/toastr.service';
 import { dateToObjDate, objToDateObj } from 'src/app/shared/utilities';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 	selector: 'app-event-form',
@@ -16,6 +17,7 @@ import { dateToObjDate, objToDateObj } from 'src/app/shared/utilities';
 	styleUrls: ['./event-form.component.scss']
 })
 export class EventFormComponent implements OnInit {
+	minDate:NgbDateStruct
 	isSubmitting: boolean = false;
 	form!: FormGroup;
 	id!: string;
@@ -42,7 +44,9 @@ export class EventFormComponent implements OnInit {
 	];
 	isDuplicate: boolean = false;
 
-	constructor(private ds: DataService, private readonly spinner: NgxSpinnerService, private readonly router: Router, private readonly route: ActivatedRoute, private readonly toastr: ToastService) { }
+	constructor(private ds: DataService, private readonly spinner: NgxSpinnerService, private readonly router: Router, private readonly route: ActivatedRoute, private readonly toastr: ToastService) { 
+		this.minDate=this.convertDateToNgbDate(new Date())
+	}
 
 	ngOnInit(): void {
 		this.getRequiredData();
@@ -72,12 +76,20 @@ export class EventFormComponent implements OnInit {
 	get formData() {
 		return this.form.controls;
 	}
+	private convertDateToNgbDate(date: Date): NgbDateStruct {
+		return {
+		  year: date.getFullYear(),
+		  month: date.getMonth() + 1,
+		  day: date.getDate()
+		};
+	  }
+	
 
 	private intiForm(): void {
 		this.form = new FormGroup({
 			event_image: new FormControl("", [Validators.required]),
 			title: new FormControl("", [Validators.required]),
-			topic: new FormControl("", [Validators.required]),
+			topic: new FormControl(""),
 			is_feed: new FormControl(true),
 			start_date: new FormControl("", [Validators.required]),
 			end_date: new FormControl('', [Validators.required]),
@@ -88,7 +100,6 @@ export class EventFormComponent implements OnInit {
 			event_type: new FormControl("ONLINE"),
 			description: new FormControl("", [Validators.required]),
 		}, { 'updateOn': 'change' });
-		console.log(this.form)
 	}
 
 	getEventDetail(): void {

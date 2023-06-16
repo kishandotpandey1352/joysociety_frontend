@@ -2,12 +2,14 @@
 	<div class="card-container-header">
 		<h6 class="mb-0">Events</h6>
 		<div class="filters">
-			<button ngbDropdown placement="bottom-start" display="dynamic" class="btn btn-nude d-flex align-items-center">
+			<button ngbDropdown placement="bottom-start" display="dynamic"
+				class="btn btn-nude d-flex align-items-center">
 				<span class="context-menu" ngbDropdownToggle id="event-type-dd">
 					{{ eventTypes[payload.event_type].label }}
 				</span>
 				<ul ngbDropdownMenu aria-labelledby="event-type-dd" class="custom-dd-menu small">
-					<li ngbDropdownItem class="pointer" *ngFor="let item of eventTypes" (click)="filter('event_type', item.id)">
+					<li ngbDropdownItem class="pointer" *ngFor="let item of eventTypes"
+						(click)="filter('event_type', item.id)">
 						{{ item.label }}
 					</li>
 				</ul>
@@ -29,7 +31,8 @@
 						</a>
 						<ul ngbDropdownMenu aria-labelledby="more-dd" class="custom-dd-menu small">
 							<li ngbDropdownItem class="pointer p-0">
-								<a class="d-block" href="javascript:;" (click)="action('duplicate', item)">Duplicate Event</a>
+								<a class="d-block" href="javascript:;" (click)="action('duplicate', item)">Duplicate
+									Event</a>
 							</li>
 							<li ngbDropdownItem class="pointer p-0">
 								<a class="d-block" href="javascript:;" (click)="action('view', item)">View Event</a>
@@ -43,16 +46,20 @@
 						</ul>
 					</span>
 					<div class="card-img text-center dummy-img-bg">
-						<img [src]="item.event_image ? item.event_image : 'assets/img/event-placeholder.png'" class="img-fluid" alt="event" *ngIf="item.event_image && item.event_image != 'Some URL'">
-						<img *ngIf="item.event_image == 'Some URL'" src="assets/img/event-placeholder.png" class="img-fluid" alt="event">
+						<img [src]="item.event_image ? item.event_image : 'assets/img/event-placeholder.png'"
+							class="img-fluid" alt="event" *ngIf="item.event_image && item.event_image != 'Some URL'">
+						<img *ngIf="item.event_image == 'Some URL'" src="assets/img/event-placeholder.png"
+							class="img-fluid" alt="event">
 					</div>
 					<hr class="m-0">
 					<div class="card-body">
 						<div class="d-flex justify-content-between align-items-center">
 							<span class="f-x-small event-schedule">
-								<ng-container *ngIf="item?.isToday">TODAY • {{ item.start_datetime | date:'hh:mm a' }}</ng-container>
+								<ng-container *ngIf="item?.isToday">TODAY • {{ item.start_datetime | date:'hh:mm a'
+									}}</ng-container>
 								<ng-container *ngIf="!item?.isToday">
-									{{ item.start_datetime | date:'MMM dd, yyyy' }} • {{ item.start_datetime | date:'hh:mm a' }}
+									{{ item.start_datetime | date:'MMM dd, yyyy' }} • {{ item.start_datetime |
+									date:'hh:mm a' }}
 								</ng-container>
 								<span class="text-muted" *ngIf="item.repeat_event"> • Repeat Event</span>
 							</span>
@@ -75,12 +82,9 @@
 								<div class="text-muted">{{ item.going }} members are going</div>
 							</div>
 							<div ngbDropdown placement="bottom-start" display="dynamic">
-								<img src="assets/img/share-circle.png" alt="share" class="pointer content-menu" width="50" height="50" ngbDropdownToggle id="share-dd">
+								<img src="assets/img/share-circle.png" alt="share" class="pointer content-menu"
+									width="50" height="50" ngbDropdownToggle id="share-dd">
 								<ul ngbDropdownMenu aria-labelledby="share-dd" class="custom-dd-menu small">
-									<li ngbDropdownItem class="pointer">
-										<img src="assets/img/email-circle.png" alt="email" width="40" height="40">
-										Email
-									</li>
 									<li ngbDropdownItem class="pointer">
 										<img src="assets/img/copy-circle.png" alt="copy link" width="40" height="40">
 										Copy Link
@@ -92,8 +96,9 @@
 				</div>
 			</div>
 		</div>
-		<ngb-pagination [collectionSize]="collectionSize" [(page)]="payload.page" [maxSize]="5" [rotate]="true" [ellipses]="false"
-			[boundaryLinks]="true" size="sm" class="d-flex justify-content-end" (pageChange)="pageChange($event)">
+		<ngb-pagination [collectionSize]="collectionSize" [(page)]="payload.page" [maxSize]="5" [rotate]="true"
+			[ellipses]="false" [boundaryLinks]="true" size="sm" class="d-flex justify-content-end"
+			(pageChange)="pageChange($event)">
 		</ngb-pagination>
 	</ng-container>
 	<div class="text-muted loading-container" *ngIf="!events.length && isLoading">Loading...</div>

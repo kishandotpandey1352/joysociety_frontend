@@ -19,15 +19,6 @@ export interface ISideBar {
 
 const profileAccountRoutes: ISideBar[] = [
     {
-        title: "Profile edit",
-        icon: "",
-        activeIcon: "",
-        path: APP_ROUTES.profileEdit,
-        children: [],
-        isVisible: true,
-        roleAccessibility: [1, 3]
-    },
-    {
         title: "Update email & password",
         icon: "",
         activeIcon: "",
