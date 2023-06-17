@@ -234,4 +234,8 @@ export class ApiRoutes {
     public static get createChatMessage(): string {
         return this.apiBaseUrl + "chat/message/create/"
     }
+
+    public static get getBadges(): string {
+        return this.apiBaseUrl + "badges-list"
+    }
 }

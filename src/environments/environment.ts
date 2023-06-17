@@ -1,6 +1,7 @@
 export const environment = {
 	production: false,
-	apiBaseUrl: "http://3.132.74.176:8000/",
+	// apiBaseUrl: "http://3.132.74.176:8000/",
+	apiBaseUrl: "http://127.0.0.1:8000/",
 	host: "http://3.132.74.176:8000/",
 	tinymceKey: "vkd1yy3g9ku3vsflou00niyf5r9i4zvu2mfrctyfxyb4nk5k"
 };
