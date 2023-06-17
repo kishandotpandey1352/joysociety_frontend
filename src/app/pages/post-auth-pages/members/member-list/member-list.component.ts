@@ -43,7 +43,7 @@ export class MemberListComponent implements OnInit {
 				this.roles = res
 				this.getMemberList();
 			},
-			error: (err) => console.error(err),
+			error: (err: any) => console.error(err),
 			complete: () => { }
 		});
 	}
@@ -70,7 +70,7 @@ export class MemberListComponent implements OnInit {
           });
 				}
 			},
-			error: (err) => console.error(err),
+			error: (err: any) => console.error(err),
 			complete: () => { this.isLoading = false }
 		});
 	}

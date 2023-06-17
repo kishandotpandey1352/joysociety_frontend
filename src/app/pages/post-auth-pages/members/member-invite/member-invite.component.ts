@@ -42,7 +42,7 @@ export class MemberInviteComponent implements OnInit {
 	private getRequiredInfo(): void {
 		const urls: string[] = [ApiRoutes.roles, ApiRoutes.inviteContent];
 		this.ds.forkJoin(urls).subscribe({
-			next: (res) => {
+			next: (res: any) => {
 				if (res.length) {
 					this.roles = res[0];
 					this.inviteContent = res[1];
@@ -50,12 +50,13 @@ export class MemberInviteComponent implements OnInit {
 					this.form.get("template")?.setValue(this.inviteContent.template);
 				}
 			},
-			error: (err) => console.error(err),
+			error: (err: any) => console.error(err),
 			complete: () => { }
 		});
 	}
 
 	Send(): void {
+    debugger;
 		if (this.form.invalid) {
 			this.isSubmitting = true;
 			return;
@@ -66,7 +67,7 @@ export class MemberInviteComponent implements OnInit {
 			// invite_link: this.form.get("invite_link")?.value,
 		};
 		this.ds.put(ApiRoutes.inviteContent, contentPayload).subscribe({
-			next: (res) => {
+			next: (res: any) => {
 				console.log(res);
 				if (!!res) {
 					const invitePayload: any = {
@@ -74,7 +75,7 @@ export class MemberInviteComponent implements OnInit {
 						role: +this.form.get("role")?.value,
 					};
 					this.ds.post(ApiRoutes.memberInvite, invitePayload).subscribe({
-						next: (data) => {
+						next: (data: any) => {
 							console.log(data)
 							if (!!data) {
 								this.form.get("emails")?.setValue("");
@@ -82,12 +83,12 @@ export class MemberInviteComponent implements OnInit {
 								this.ts.success("Invite Sent!", "Success");
 							}
 						},
-						error: (err) => console.error(err),
+						error: (err: any) => console.error(err),
 						complete: () => { }
 					});
 				}
 			},
-			error: (err) => console.error(err),
+			error: (err: any) => console.error(err),
 			complete: () => { }
 		});
 	}

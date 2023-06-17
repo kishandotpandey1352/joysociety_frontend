@@ -9,7 +9,7 @@
     </div>
 
     <hr class="e2e">
-    
+
     <div class="invite invite-link">
         <p class="title mb-0">Invite by Link</p>
         <p class="text-muted mb-0">Copy the link below to invite people</p>
@@ -27,11 +27,11 @@
         <p class="title mb-0">Invite by Email</p>
         <form [formGroup]="form">
             <div class="mb-2">
-                <tag-input [trimTags]="true" [modelAsStrings]="true" [allowDupes]="false" [separatorKeyCodes]="[32]" formControlName="emails" 
+                <tag-input [trimTags]="true" [modelAsStrings]="true" [allowDupes]="false" [separatorKeyCodes]="[32]" formControlName="emails"
                 class="form-control" [placeholder]="'Add email'" [secondaryPlaceholder]="'Add multiple emails'"
                 [validators]="emailValidate"></tag-input>
                 <div *ngIf="isSubmitting && formData['emails'].errors" class="err">
-                    <small [hidden]="!formData['emails'].errors['required']">*Email is required.</small>
+                    <small [hidden]="formData['emails'].errors['required']">*Email is required.</small>
                     <small [hidden]="!formData['emails'].errors['pattern']">*Invalid email.</small>
                 </div>
             </div>
@@ -68,7 +68,7 @@
     </div>
 
     <!-- <hr class="">
-    
+
     <div class="invite invite-social">
         <p class="title mb-2">Invite by</p>
         <div class="social-auth d-flex gap-2">
