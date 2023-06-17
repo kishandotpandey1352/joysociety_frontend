@@ -11,6 +11,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
 
         &.no-img {
             background-color: map-get(map-get($palette, green), dark);
@@ -46,6 +47,7 @@
     .card-body {
         .card-title {
             font-size: map-get($fontSize, small);
+            cursor: pointer;
         }
     }
 

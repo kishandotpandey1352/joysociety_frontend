@@ -40,18 +40,18 @@
 
 	<div class="tab mt-4">
 		<button class="tablinks" (click)="openTab('top')" [ngClass]="{'tablink-active': active == 'top'}">
-			Top
+			All
 		</button>
-		<button class="tablinks" disabled (click)="openTab('near-you')" [ngClass]="{'tablink-active': active == 'near-you'}">
+		<button class="tablinks" (click)="openTab('near-you')" [ngClass]="{'tablink-active': active == 'near-you'}">
 			Near You
 		</button>
-		<button class="tablinks" disabled (click)="openTab('new')" [ngClass]="{'tablink-active': active == 'new'}">
+		<button class="tablinks" (click)="openTab('new')" [ngClass]="{'tablink-active': active == 'new'}">
 			Newest
 		</button>
-		<button class="tablinks" disabled (click)="openTab('hosts')" [ngClass]="{'tablink-active': active == 'hosts'}">
+		<button class="tablinks" (click)="openTab('hosts')" [ngClass]="{'tablink-active': active == 'hosts'}">
 			Hosts
 		</button>
-		<button class="tablinks" disabled (click)="openTab('online')" [ngClass]="{'tablink-active': active == 'online'}">
+		<button class="tablinks" (click)="openTab('online')" [ngClass]="{'tablink-active': active == 'online'}">
 			Online Now
 		</button>
 	</div>
@@ -82,17 +82,17 @@
 				<div class="card mb-3">
 					<div class="row py-3 g-0">
 						<div class="col-lg-3 p-0">
-							<div class="card-avatar">
+							<div (click)="navigateProfile(routes.members, item.id)" class="card-avatar">
 								<img *ngIf="item?.profile_pic" [src]="item?.profile_pic" class="img-fluid round" alt="profile pic">
 								<img *ngIf="!item?.profile_pic" src="assets/img/avatar-placeholder.png" class="img-fluid round" alt="profile pic">
 							</div>
 						</div>
 						<div class="col-lg-7 p-0">
 							<div class="card-body p-0">
-								<h5 class="card-title mb-0 text-capitalize">{{ item?.full_name }}</h5>
+								<h5 (click)="navigateProfile(routes.members, item.id)" class="card-title mb-0 text-capitalize">{{ item?.full_name }}</h5>
 								<p class="card-text mb-0">
 									<small class="text-muted">
-										<span class="light-green">{{ item.role_name == 'Admin' ? 'Host' : item.role_name }}</span> 
+										<span class="light-green">{{ item.role_name == 'Admin' ? 'Host' : item.role_name }}</span>
 										- Last active 3d ago
 									</small>
 								</p>
@@ -106,7 +106,7 @@
 						</div>
 						<div class="col-lg-2 p-0">
 							<div class="card-actions">
-								<span class="light-green pointer">Follow</span>
+								<span (click)="changeFollowStatus(item.followStatus, item.id)" class="light-green pointer">{{ item.followStatus }}</span>
 								<span ngbDropdown placement="bottom-end" display="dynamic" class="action-items">
 									<a href="javascript:;" class="context-menu" ngbDropdownToggle id="more-dd">
 										<img src="assets/img/dots.png" class="dots" alt="more" width="12" height="3">

@@ -65,6 +65,9 @@ export class MemberListComponent implements OnInit {
 						return i;
 					})
 					this.memberList = res.results;
+          this.memberList.map((e: any) =>{
+            e.followStatus = 'Follow';
+          });
 				}
 			},
 			error: (err) => console.error(err),
@@ -86,4 +89,25 @@ export class MemberListComponent implements OnInit {
 	gotoInvite(): void {
 		this.router.navigate([APP_ROUTES.memberInvite]);
 	}
+
+  navigateProfile(first:any, second: any){
+    this.router.navigate(['/', first, second]);
+  }
+
+  changeFollowStatus(status: any, id: any){
+    if(status === 'Follow'){
+      this.memberList.map((e: any) =>{
+        if(e.id === id){
+          e.followStatus = 'Unfollow';
+        }
+      });
+    }
+    else{
+      this.memberList.map((e: any) =>{
+        if(e.id === id){
+          e.followStatus = 'Follow';
+        }
+      });
+    }
+  }
 }

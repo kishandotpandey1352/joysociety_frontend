@@ -15,6 +15,7 @@ export class NavigationBarComponent implements OnInit {
 	routes: any = APP_ROUTES;
 	subs: Subscription = new Subscription();
 	menu: ISideBar[] = [];
+  skipMenuItems: any = ['Requests to Join', 'Welcome New Members'];
 	currentRoute!: string;
 	sidebarHeader: any = {
 		isBack: false,
@@ -42,7 +43,7 @@ export class NavigationBarComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.profileDetail = this.ds.state.get('profileData');
-		this.router.events.subscribe((val) => {
+		this.router.events.subscribe((val: any) => {
 			if (val instanceof NavigationEnd) {
 				this.loadSideBar(val.urlAfterRedirects);
 			}
@@ -78,7 +79,7 @@ export class NavigationBarComponent implements OnInit {
 				isBack: false,
 				isVisible: true
 			};
-			this.menu = routes.find((i: ISideBar) => i.title == 'Members')!.children;
+			this.menu = routes.find((i: ISideBar) => i.title == 'Members')!.children.filter((e: any) => !this.skipMenuItems.includes(e.title) );
 		}
 		console.log(this.menu,'rohan');
 	}
